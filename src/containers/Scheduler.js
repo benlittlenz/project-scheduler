@@ -5,12 +5,19 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 
 import "../styles/bootstrap.min.css";
+import EventView from "../components/EventContent";
+import { DesktopStyles } from "../styles/Scheduler";
 import { gridViews } from "../static";
 
 // Main Component
 const Scheduler = () => {
 
+    const eventContent = (view) => {
+      console.log("view", view)
+        return <EventView event={view.event._def} />;
+    };
     return (
+      <DesktopStyles>
         <FullCalendar
           initialView="dayGridMonth"
           headerToolbar={{
@@ -22,9 +29,11 @@ const Scheduler = () => {
               type: "dayGridMonth",
               buttonText: "Month View",
               weekends: false,
+              eventContent,
             },
             timeGridWeek: {
               ...gridViews.timegrid,
+              eventContent,
             },
           }}
           plugins={[timeGridPlugin, interactionPlugin, dayGridPlugin]}
@@ -32,12 +41,25 @@ const Scheduler = () => {
           themeSystem="bootstrap"
           selectable={true}
           editable={true}
-          slotMinTime="08:00"
-          slotMaxTime="17:00"
-          eventOrder="order" //TODO update to latest version. Current version 5.8.0, some events are overlapping with each other in Month View
+          eventOrder="order"
           eventDurationEditable={true}
           eventStartEditable={true}
+          events={[
+            {
+              title: "Deliverable 1 - Jobs, Staff and Client pages",
+              start: "2021-09-06",
+              end: "2021-09-08",
+              status: "In Progress",
+            },
+            {
+              title: "Deliverable 2 - Quote process",
+              start: "2021-09-09",
+              end: "2021-10-04",
+              status: "In Progress",
+            },
+          ]}
         />
+      </DesktopStyles>
     );
 };
 
