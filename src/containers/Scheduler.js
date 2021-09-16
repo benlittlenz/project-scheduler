@@ -50,12 +50,21 @@ const Scheduler = () => {
               start: "2021-09-06",
               end: "2021-09-08",
               status: "In Progress",
+              hours: "14-18",
             },
             {
               title: "Deliverable 2 - Quote process",
               start: "2021-09-09",
               end: "2021-10-04",
               status: "In Progress",
+              hours: "55-69",
+            },
+            {
+              title: "Deliverable 2 - Job process",
+              start: "2021-10-06",
+              end: "2021-10-08",
+              status: "Booked In",
+              hours: "13-16",
             },
           ]}
         />

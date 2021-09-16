@@ -1,5 +1,5 @@
 const timegrid = {
-  type: "timeGrid",
+  // type: "timeGrid",
   titleFormat: {
     year: "numeric",
     month: "long",
@@ -10,11 +10,12 @@ const timegrid = {
   },
   displayEventTime: false,
   slotEventOverlap: false,
+  slotDuration: { days: 1 },
   duration: { days: 7 },
   weekends: false,
   buttonText: "Week View",
   dateAlignment: "week",
-  allDayContent: () => "Notes",
+  allDayContent: () => "Work",
 };
 
 export default timegrid;

@@ -29,6 +29,10 @@ export const DesktopStyles = styled.div`
     border-radius: 0;
   }
 
+  .fc-axis {
+    display: none !important;
+  }
+
   .fc-timegrid-col.fc-day-today {
     background-color: ${color.today};
   }
