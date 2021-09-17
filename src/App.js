@@ -1,20 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as R from "ramda";
 
-import Scheduler from "./containers/Scheduler";
+import SchedulerContainer from "./containers";
 import * as selectors from "./redux/scheduler/scheduler.selector";
 import { getAllData } from "./redux/scheduler/scheduler.duck";
 
 function App({ actions, isLoading }) {
-    useEffect(() => {
-      const data = actions.getAllData();
-    }, []);
+  useEffect(() => {
+    actions.getAllData()
+  }, []);
   return (
-    <div className="App">
-      <Scheduler />
-    </div>
+    <>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <div>
+          <SchedulerContainer />
+        </div>
+      )}
+    </>
   );
 }
 

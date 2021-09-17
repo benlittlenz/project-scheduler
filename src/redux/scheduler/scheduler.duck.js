@@ -22,7 +22,8 @@ export default (state = initState, action) => {
   const reducer = {
     [GET_ALL_DATA_SUCCESS]: (state, payload) => ({
       ...state,
-      ...payload,
+      data: payload,
+      isLoading: false,
     }),
     [SET_LOADING_STATE]: setState("isLoading"),
   }[type];
