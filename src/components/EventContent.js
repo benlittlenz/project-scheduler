@@ -8,7 +8,7 @@ const EventView = ({ event }) => {
     "In Progress": "#2563EB",
   };
   const eventProp = event.extendedProps;
-  console.log("eventProp", eventProp);
+  // console.log("eventProp", eventProp);
   const styles = () => {
     return {
       color: "white",

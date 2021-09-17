@@ -1,6 +1,6 @@
 import { fork, all } from "redux-saga/effects";
-// import boardSaga from "./boards/boards.saga";
+import schedulerSaga from "./scheduler/scheduler.saga";
 
 export default function* () {
-  yield all([]);
+  yield all([fork(schedulerSaga)]);
 }

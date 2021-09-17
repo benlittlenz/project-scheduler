@@ -13,7 +13,7 @@ import { gridViews } from "../static";
 const Scheduler = () => {
 
     const eventContent = (view) => {
-      console.log("view", view)
+      // console.log("view", view)
         return <EventView event={view.event._def} />;
     };
     return (
