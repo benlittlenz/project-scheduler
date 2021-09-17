@@ -1,5 +1,5 @@
 import { createAction } from "redux-actions";
-import { setState, getActionWrapper } from "src/utils";
+import { setState, getActionWrapper } from "../../utils";
 
 const initState = {
   data: {},
