@@ -13,17 +13,13 @@ import { gridViews } from "../static";
 // Main Component
 const Scheduler = ({ isLoading, data }) => {
   const [deliverables, setDeliverables] = useState(data);
-
   useEffect(() => {
-    console.log("DATA", data)
-    const result = formatData(data || []);
+    const result = formatData(data);
     setDeliverables(result);
     console.log("result", result);
   }, [data]);
 
   function formatData(payload) {
-    if(payload) {
-    console.log("PAYLOAD", payload);
     return payload?.map((item) => ({
       title: item.field_18,
       start: moment(item?.field_62_raw?.date_formatted, "DD/MM/YYYY").format(
@@ -34,8 +30,6 @@ const Scheduler = ({ isLoading, data }) => {
       ),
       status: item.field_22,
     }));
-    }
-    return [];
   }
   const eventContent = (view) => {
     return <EventView event={view.event._def} />;
