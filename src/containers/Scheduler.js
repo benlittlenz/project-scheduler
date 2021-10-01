@@ -11,16 +11,19 @@ import { DesktopStyles } from "../styles/Scheduler";
 import { gridViews } from "../static";
 
 // Main Component
-const Scheduler = ({ data }) => {
+const Scheduler = ({ isLoading, data }) => {
   const [deliverables, setDeliverables] = useState(data);
 
   useEffect(() => {
-    const result = formatData(data);
+    console.log("DATA", data)
+    const result = formatData(data || []);
     setDeliverables(result);
     console.log("result", result);
   }, [data]);
-  
+
   function formatData(payload) {
+    if(payload) {
+    console.log("PAYLOAD", payload);
     return payload?.map((item) => ({
       title: item.field_18,
       start: moment(item?.field_62_raw?.date_formatted, "DD/MM/YYYY").format(
@@ -31,6 +34,8 @@ const Scheduler = ({ data }) => {
       ),
       status: item.field_22,
     }));
+    }
+    return [];
   }
   const eventContent = (view) => {
     return <EventView event={view.event._def} />;

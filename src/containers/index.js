@@ -6,6 +6,7 @@ import * as selectors from "../redux/scheduler/scheduler.selector";
 import Scheduler from "./Scheduler";
 console.log('select', selectors)
 const mapStateToProps = R.applySpec({
+  isLoading: selectors.isLoadingSelector,
   data: selectors.dataSelector,
 });
 

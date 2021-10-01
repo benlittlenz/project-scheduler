@@ -3,7 +3,7 @@ import { setState, getActionWrapper } from "../../utils";
 
 const initState = {
   data: {},
-  isLoading: false,
+  isLoading: true,
 };
 
 const wrapWithNameSpace = getActionWrapper("SCHEDULER");

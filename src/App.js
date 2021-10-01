@@ -11,6 +11,7 @@ function App({ actions, isLoading }) {
   useEffect(() => {
     actions.getAllData()
   }, []);
+  console.log("ISLOADING", isLoading)
   return (
     <>
       {isLoading ? (
