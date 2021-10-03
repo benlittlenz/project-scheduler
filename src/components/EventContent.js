@@ -15,7 +15,7 @@ const EventView = ({ event }) => {
       backgroundColor: color[eventProp.status],
     };
   };
-
+  console.log("eventProp", eventProp);
   return (
     <Container
       padding={"0.5px"}
@@ -23,10 +23,8 @@ const EventView = ({ event }) => {
       color={styles().color}
       backgroundColor={styles().backgroundColor}
     >
-      {event.company} - {event.title}
-      <div> 
-        {eventProp.status}
-      </div>
+      {eventProp.company} - {event.title}
+      <div>{eventProp.status}</div>
     </Container>
   );
 };
