@@ -24,7 +24,7 @@ const EventView = ({ event }) => {
       backgroundColor={styles().backgroundColor}
     >
       {event.company} - {event.title}
-      <div>
+      <div> 
         {eventProp.status}
       </div>
     </Container>
