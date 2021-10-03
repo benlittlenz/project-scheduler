@@ -20,9 +20,10 @@ const Scheduler = ({ isLoading, data }) => {
   }, [data]);
 
   function formatData(payload) {
+    console.log("PAYLOAD", payload)
     return payload?.map((item) => ({
       company: Array.isArray(item.field_28_raw)
-        ? item?.field_28_raw?.identifier
+        ? item?.field_28_raw[0].identifier
         : "",
       title: item.field_18,
       start: moment(item?.field_62_raw?.date_formatted, "DD/MM/YYYY").format(
