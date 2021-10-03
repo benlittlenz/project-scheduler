@@ -19,9 +19,12 @@ const Scheduler = ({ data }) => {
     setDeliverables(result);
     console.log("result", result);
   }, [data]);
-  
+
   function formatData(payload) {
     return payload?.map((item) => ({
+      company: Array.isArray(item.field_28_raw)
+        ? item?.field_28_raw?.identifier
+        : "",
       title: item.field_18,
       start: moment(item?.field_62_raw?.date_formatted, "DD/MM/YYYY").format(
         "YYYY-MM-DD"

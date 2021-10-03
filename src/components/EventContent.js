@@ -23,7 +23,7 @@ const EventView = ({ event }) => {
       color={styles().color}
       backgroundColor={styles().backgroundColor}
     >
-      {event.title}
+      {event.company} - {event.title}
       <div>
         {eventProp.status}
       </div>
