@@ -11,9 +11,8 @@ import { DesktopStyles } from "../styles/Scheduler";
 import { gridViews } from "../static";
 
 // Main Component
-const Scheduler = ({ data }) => {
+const Scheduler = ({ isLoading, data }) => {
   const [deliverables, setDeliverables] = useState(data);
-
   useEffect(() => {
     const result = formatData(data);
     setDeliverables(result);
